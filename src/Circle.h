@@ -6,9 +6,9 @@ class Circle : public Curve3D
 {
 public:
 
-  virtual Point3D GetPointAt(float theParameter) override;
+  virtual Point3D GetPointAt(Real theParameter) override;
 
-  virtual Vector3D GetFirstDerivativeAt(float theParameter) override;
+  virtual Vector3D GetFirstDerivativeAt(Real theParameter) override;
 
 public:
   Circle(Real theRadius);

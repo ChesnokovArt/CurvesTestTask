@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Circle.cpp" />
+    <ClCompile Include="src\Curve3D.cpp" />
     <ClCompile Include="src\Ellips.cpp" />
     <ClCompile Include="src\Helix.cpp" />
     <ClCompile Include="src\main.cpp" />

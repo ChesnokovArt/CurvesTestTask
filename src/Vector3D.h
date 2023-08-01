@@ -45,6 +45,14 @@ public:
     return myZ;
   }
 
+public:
+
+  Vector3D operator+(const Vector3D& theOther) const;
+  Vector3D operator-(const Vector3D& theOther) const;
+
+  Vector3D operator*(Real theMul) const;
+  Vector3D operator/(Real theDenom) const;
+
 private:
 
   Real myX = 0;
