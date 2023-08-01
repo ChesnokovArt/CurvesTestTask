@@ -19,7 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Circle.cpp" />
+    <ClCompile Include="src\Ellips.cpp" />
+    <ClCompile Include="src\Helix.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Vector3D.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Circle.h" />
+    <ClInclude Include="src\Curve3D.h" />
+    <ClInclude Include="src\Ellips.h" />
+    <ClInclude Include="src\Helix.h" />
+    <ClInclude Include="src\Vector3D.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -122,6 +133,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
