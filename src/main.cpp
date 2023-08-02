@@ -9,6 +9,7 @@
 #include <numeric>
 #include <random>
 #include <ranges>
+#include <omp.h>
 
 int main()
 {
@@ -80,17 +81,25 @@ int main()
   }
 
   // Sum of radii sequential
+  double aSeqStart = omp_get_wtime();
   Real aSum1 = std::reduce(std::next(aSecondContainer.begin()), aSecondContainer.end(),
                            std::static_pointer_cast<Circle>(aSecondContainer[0])->GetRadius(),
                            [](Real theAccumulatedValue, const auto& theCircle)
     {
       return theAccumulatedValue + std::static_pointer_cast<Circle>(theCircle)->GetRadius();
     });
-  std::cout << "Sum of radii = " << aSum1 << "\n";
+  std::cout << "Sum of radii (seq/stl) = " << aSum1 << "\tTime = " << omp_get_wtime() - aSeqStart << "sec\n";
 
-  // TODO:
-  //   OpenMP reduce
-  //   shared lib
+  // Sum of radii parallel
+  Real aSum2 = 0.0f;
+  omp_set_num_threads(omp_get_max_threads());
+  double aParStart = omp_get_wtime();
+  #pragma omp parallel for reduction(+:aSum2)
+  for (int anIdx = 0; anIdx < aSecondContainer.size(); anIdx++)
+  {
+    aSum2 += std::static_pointer_cast<Circle>(aSecondContainer[anIdx])->GetRadius();
+  }
+  std::cout << "Sum of radii (par/omp) = " << aSum2 << "\tTime = " << omp_get_wtime() - aParStart << "sec\n";
 
   return 0;
 }
