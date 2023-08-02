@@ -2,7 +2,7 @@
 
 #include "Curve3D.h"
 
-class Helix : public Curve3D
+class CURVES_API Helix : public Curve3D
 {
 public:
 

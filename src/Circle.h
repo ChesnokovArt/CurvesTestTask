@@ -2,7 +2,7 @@
 
 #include "Curve3D.h"
 
-class Circle : public Curve3D
+class CURVES_API Circle : public Curve3D
 {
 public:
 

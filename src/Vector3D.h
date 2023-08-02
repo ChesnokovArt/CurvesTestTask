@@ -1,10 +1,12 @@
 #pragma once
 
+#include "Export.h"
+
 #include <ostream>
 
 using Real = float;
 
-class Vector3D
+class CURVES_API Vector3D
 {
 public:
   Vector3D() = default;
@@ -60,7 +62,7 @@ private:
   Real myZ = 0;
 };
 
-std::ostream& operator<<(std::ostream& theOut, const Vector3D& theVec);
+CURVES_API std::ostream& operator<<(std::ostream& theOut, const Vector3D& theVec);
 
 // Point isn't conceptually a vector, but it's sufficient for test task.
 using Point3D = Vector3D;

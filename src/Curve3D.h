@@ -1,8 +1,9 @@
 #pragma once
 
+#include "Export.h"
 #include "Vector3D.h"
 
-class Curve3D
+class CURVES_API Curve3D
 {
 public:
   virtual ~Curve3D() = default;
